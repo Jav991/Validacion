@@ -1,6 +1,6 @@
 function conversor(){
-    document.getElementById('iimgBtn').addEventListener('click', function(){
-    if(!file){
+   let image = document.getElementById('iimgBtn').addEventListener('click', function(){
+    if(!image){
         alert("Por favor seleccione un JPG primero")
         return
     }

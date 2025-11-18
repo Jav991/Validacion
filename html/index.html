@@ -41,21 +41,8 @@
                     <label for="file-upload" class="form-label d-block text-start">Subir imagen:</label>
                     <input  type="file" id="file-upload"  accept="image/*" onchange="conversor(event)" class="form-control form-control-lg">
                 </div>
-
-                <div id="preview-area" class="border border-secondary rounded-3 p-3 text-center mb-4 bg-light">
-                    <p id="status-message" class="text-muted">Esperando archivo...</p>
-                    <img id="image-preview" src="#" alt="Vista previa de la imagen original" class="img-fluid rounded-3 shadow-sm d-none" style="max-height: 250px; margin: 0 auto;">
-                    
-                    <canvas id="conversion-canvas" class="d-none"></canvas>
-                </div>
-
                 <div class="d-grid gap-2 col-8 mx-auto">
-                    <button 
-                        id="download-btn" 
-                        type="button" 
-                        disabled 
-                        class="btn btn-primary btn-lg"
-                    >
+                    <button id="iimgBtn" type="button" class="btn btn-primary btn-lg">
                         Descargar WebP
                     </button>
                 </div>
