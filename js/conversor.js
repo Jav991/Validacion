@@ -14,6 +14,15 @@ document.getElementById('iimgBtn').addEventListener('click', function(){
             canvas.width = img.width
             canvas.height = img.height
             const ctx = canvas.getContext('2d')
+            ctx.drawImage(img, 0, 0)
+
+            const webData = canvas.toDataURL('image/webp', 0.8)
+
+            const link = document.getElementById('enlace')
+            link.href = webData;
+            link.download = "imagen.webp"
+            link.style.display = "inline-block"
+            link.textContent = "Descargar Imagen Webp"
         }
     }
 })
