@@ -1,4 +1,5 @@
-document.getElementById('iimgBtn').addEventListener('click', function(){
+function conversor(){
+    document.getElementById('iimgBtn').addEventListener('click', function(){
     if(!file){
         alert("Por favor seleccione un JPG primero")
         return
@@ -26,3 +27,4 @@ document.getElementById('iimgBtn').addEventListener('click', function(){
         }
     }
 })
+}
