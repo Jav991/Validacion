@@ -88,3 +88,53 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(108, 122, 137, 0.2);
 }
+
+/* --- ESTILOS ESPECÍFICOS PARA EL CONVERSOR DE IMAGEN --- */
+
+/* Estilo para la caja de previsualización */
+#preview-area {
+    border: 2px dashed #b0c4de !important; /* Borde punteado para indicar zona de carga */
+    background-color: #f8faff !important; /* Fondo muy claro */
+    min-height: 200px; /* Altura mínima para que se vea bien */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#preview-area:hover {
+    border-color: #4795ed !important; /* Cambio de color al pasar el ratón */
+}
+
+/* Mensaje de estado */
+#status-message {
+    font-size: 1rem;
+    color: #8bbce8;
+    font-weight: 500;
+}
+
+/* Botón de Descarga */
+#download-btn {
+    /* Clases de Bootstrap ya aplicadas en el HTML: btn btn-primary btn-lg */
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: #00b894 !important; /* Color verde vibrante para la descarga */
+    border-color: #00b894 !important;
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+    transition: all 0.3s ease;
+}
+
+#download-btn:hover:not(:disabled) {
+    background-color: #00a082 !important;
+    border-color: #00a082 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 184, 148, 0.5);
+}
+
+#download-btn:disabled {
+    background-color: #adb5bd !important;
+    border-color: #adb5bd !important;
+    cursor: not-allowed;
+    box-shadow: none;
+}
