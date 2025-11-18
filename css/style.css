@@ -1,140 +1,188 @@
+/* ------------------------------------ */
+/* ESTILOS BASE             */
+/* ------------------------------------ */
+
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right bottom, #e0e7ee, #f0f4f7);
+    /* Degradado de fondo más suave y moderno */
+    background: linear-gradient(135deg, #f0f4f8, #e0e7ee);
     font-family: 'Inter', sans-serif;
     text-align: center;
     color: #333;
+    padding: 20px; /* Padding general para evitar que el contenido toque los bordes */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+
+/* ------------------------------------ */
+/* CAJA PRINCIPAL            */
+/* ------------------------------------ */
 
 .container-sm {
     background-color: #ffffff;
     border: none;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 16px; /* Bordes más redondeados */
+    /* Sombra más elegante y difuminada */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    max-width: 480px;
-    transition: transform 0.3s ease;
+    max-width: 520px; /* Ligeramente más ancho */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición más suave */
 }
 
 .container-sm:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efecto 3D al pasar el ratón */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 .display-6 {
     color: #2c3e50 !important;
-    font-weight: 300 !important;
+    font-weight: 700 !important; /* Títulos más audaces */
     margin-bottom: 3rem !important;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
 }
 
+.h4 {
+    color: #34495e !important;
+    font-weight: 600 !important;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1; /* Separador sutil */
+}
+
+/* ------------------------------------ */
+/* FORMULARIO              */
+/* ------------------------------------ */
+
 .form-control-lg {
-    border: 1px solid #e0e7ee;
-    border-radius: 8px;
-    padding: 15px 20px;
+    border: 2px solid #e0e7ee; /* Borde más definido */
+    border-radius: 10px;
+    padding: 18px 20px;
     font-size: 1.1rem;
-    color: #555;
+    color: #34495e;
     background-color: #fcfdfe;
     transition: all 0.3s ease;
 }
 
 .form-control-lg::placeholder {
     color: #aebacd;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .form-control-lg:focus {
-    border-color: #8bbce8;
-    box-shadow: 0 0 0 0.3rem rgba(71, 149, 237, 0.1);
+    border-color: #4795ed;
+    box-shadow: 0 0 0 0.4rem rgba(71, 149, 237, 0.15);
     background-color: #ffffff;
 }
 
-.btn-outline-primary, .btn-outline-secondary {
-    font-weight: 500;
+/* ------------------------------------ */
+/* BOTONES               */
+/* ------------------------------------ */
+
+.btn-lg {
+    font-weight: 600;
     letter-spacing: 0.5px;
-    padding: 14px 25px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    padding: 16px 25px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
     text-transform: uppercase;
     font-size: 1.05rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-outline-primary {
-    color: #4795ed;
-    border-color: #4795ed;
+.btn-success {
+    background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
 }
 
-.btn-outline-primary:hover {
-    background-color: #4795ed;
-    color: white !important;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(71, 149, 237, 0.2);
+.btn-success:hover {
+    background-color: #27ae60 !important;
+    border-color: #27ae60 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(46, 204, 113, 0.3);
 }
 
-.btn-outline-secondary {
-    color: #6c7a89;
-    border-color: #6c7a89;
+.btn-danger {
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
 }
 
-.btn-outline-secondary:hover {
-    background-color: #6c7a89;
-    color: white !important;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(108, 122, 137, 0.2);
+.btn-danger:hover {
+    background-color: #c0392b !important;
+    border-color: #c0392b !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(231, 76, 60, 0.3);
 }
 
-/* --- ESTILOS ESPECÍFICOS PARA EL CONVERSOR DE IMAGEN --- */
+/* Efecto de presionado para todos los botones de validación */
+.btn:active:focus {
+    box-shadow: none !important;
+    transform: translateY(1px) !important;
+}
+
+
+/* ------------------------------------ */
+/* CONVERSOR DE IMAGEN         */
+/* ------------------------------------ */
 
 /* Estilo para la caja de previsualización */
 #preview-area {
-    border: 2px dashed #b0c4de !important; /* Borde punteado para indicar zona de carga */
-    background-color: #f8faff !important; /* Fondo muy claro */
-    min-height: 200px; /* Altura mínima para que se vea bien */
+    border: 3px dashed #b0c4de !important; 
+    background-color: #fcfcff !important; 
+    min-height: 250px; /* Altura mínima mejorada */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    border-radius: 12px;
 }
 
 #preview-area:hover {
-    border-color: #4795ed !important; /* Cambio de color al pasar el ratón */
+    border-color: #4795ed !important; 
+    background-color: #f7f9ff !important; /* Cambio de color sutil */
 }
 
 /* Mensaje de estado */
 #status-message {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #8bbce8;
     font-weight: 500;
 }
 
+/* Estilo para la imagen de previsualización */
+#image-preview {
+    max-height: 200px; 
+    max-width: 100%;
+    object-fit: contain;
+    border: 1px solid #ecf0f1;
+    transition: opacity 0.3s ease;
+}
+
 /* Botón de Descarga */
 #download-btn {
-    /* Clases de Bootstrap ya aplicadas en el HTML: btn btn-primary btn-lg */
-    font-weight: 600;
-    letter-spacing: 1px;
-    background-color: #00b894 !important; /* Color verde vibrante para la descarga */
-    border-color: #00b894 !important;
-    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
-    transition: all 0.3s ease;
+    font-weight: 700; /* Más audaz */
+    letter-spacing: 1.2px;
+    /* Color verde para la acción principal (Descarga) */
+    background-color: #1abc9c !important; 
+    border-color: #1abc9c !important;
+    box-shadow: 0 8px 15px rgba(26, 188, 156, 0.4);
 }
 
 #download-btn:hover:not(:disabled) {
-    background-color: #00a082 !important;
-    border-color: #00a082 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 184, 148, 0.5);
+    background-color: #16a085 !important;
+    border-color: #16a085 !important;
+    transform: translateY(-3px); /* Efecto de "lift" más pronunciado */
+    box-shadow: 0 12px 25px rgba(26, 188, 156, 0.5);
 }
 
 #download-btn:disabled {
-    background-color: #adb5bd !important;
-    border-color: #adb5bd !important;
+    background-color: #bdc3c7 !important; /* Gris claro para estado inactivo */
+    border-color: #bdc3c7 !important;
     cursor: not-allowed;
-    box-shadow: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
